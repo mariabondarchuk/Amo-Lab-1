@@ -29,6 +29,7 @@ public class SimplifiedNewtonAlgorithm : IAlgorithm
 				ConsoleHelper.WriteLineWarning("No termination condition change. Exiting");
 				break;
 			}
+
 			iteration++;
 		}
 
@@ -36,7 +37,7 @@ public class SimplifiedNewtonAlgorithm : IAlgorithm
 		{
 			ConsoleHelper.WriteLineWarning("Max iterations count exceeded");
 		}
-		Console.WriteLine($"Result = {x}");
+
 		return x;
 	}
 

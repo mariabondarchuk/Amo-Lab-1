@@ -42,7 +42,6 @@ public class SecantAlgorithm : IAlgorithm
 			iteration++;
 		}
 
-		Console.WriteLine($"Result = {x}");
 		return x;
 	}
 

@@ -13,11 +13,15 @@
 			{
 				var algorithm = new SecantAlgorithm();
 				double secantSolution = algorithm.Run(0, 9, Math.Pow(10, -7), Functions.Func24);
+				Console.WriteLine($"Result = {secantSolution}");
+
 			}
 			else if (input.Key == ConsoleKey.D2)
 			{
+				// todo: Замінити на функцію 16
 				var algorithm = new SimplifiedNewtonAlgorithm();
 				double simpleNewtonSolution = algorithm.Run(0, 9, Math.Pow(10, -7), Functions.Func24);
+				Console.WriteLine($"Result = {simpleNewtonSolution}");
 			}
 			else
 			{

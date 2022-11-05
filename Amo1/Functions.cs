@@ -14,20 +14,15 @@ public static class Functions
 			double xIn3 = Math.Pow(x, 3);
 			double insideLog = Math.Sinh(x) + Math.Cosh(x);
 			double log = Math.Log2(insideLog);
-			return 3 * Math.Pow(Math.Cos(x), 2) * (-Math.Cos(x)) +
-			       xIn3 * 3 * Math.Pow(log, 2) * 1 / (insideLog * Math.Log(2)) * insideLog +
+			return 3 * Math.Pow(Math.Cos(x), 2) * (-Math.Sin(x)) +
+			       xIn3 * 3 * Math.Pow(log, 2) / (insideLog * Math.Log(2)) * insideLog +
 			       3 * x * x + Math.Pow(log, 3)
 			       - 3 * x * x;
 		},
 		SecondDerivative = x =>
 		{
-			double xIn3 = Math.Pow(x, 3);
-			double insideLog = Math.Sinh(x) + Math.Cosh(x);
-			double log = Math.Log2(insideLog);
-			return 3 * Math.Pow(Math.Cos(x), 2) * (-Math.Cos(x)) +
-			       xIn3 * 3 * Math.Pow(log, 2) * 1 / (insideLog * Math.Log(2)) * insideLog +
-			       3 * x * x + Math.Pow(log, 3)
-			       - 3 * x * x;
+			// todo: Написати формулу другої похідної
+			return double.NaN;
 		}
 	};
 	
