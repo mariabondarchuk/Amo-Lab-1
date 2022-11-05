@@ -4,9 +4,25 @@
 	{
 		private static void Main()
 		{
-			var algorithm = new SecantAlgorithm();
-			//List<double> solutions = SimplifiedNewton(-10, 3, 0.0000007, Func16, Func16Derivative);
-			double secantSolution = algorithm.Run(0, 9, Math.Pow(10, -7), Functions.Func24);
+			Console.WriteLine("Виберіть алгоритм:");
+			Console.WriteLine("1 - Метод хорд");
+			Console.WriteLine("2 - Спрощений метод Ньютона");
+			ConsoleKeyInfo input = Console.ReadKey();
+			Console.WriteLine();
+			if (input.Key == ConsoleKey.D1)
+			{
+				var algorithm = new SecantAlgorithm();
+				double secantSolution = algorithm.Run(0, 9, Math.Pow(10, -7), Functions.Func24);
+			}
+			else if (input.Key == ConsoleKey.D2)
+			{
+				var algorithm = new SimplifiedNewtonAlgorithm();
+				double simpleNewtonSolution = algorithm.Run(0, 9, Math.Pow(10, -7), Functions.Func24);
+			}
+			else
+			{
+				Console.WriteLine("Wrong input. Bye");
+			}
 		}
 
 		// // Спрощений метод Ньютона

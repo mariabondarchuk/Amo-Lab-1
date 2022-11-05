@@ -2,6 +2,8 @@
 
 public class SecantAlgorithm : IAlgorithm
 {
+	public int MaxIterationsCount { get; } = 100_000;
+
 	public double Run(double a, double b, double eps, Function f)
 	{
 		bool validation = EnsureCanUseSecantMethod(a, b, eps, f);
@@ -11,14 +13,14 @@ public class SecantAlgorithm : IAlgorithm
 			return double.NaN;
 		}
 
-		double m1 = GetDerivativeMin(a, b, eps, f);
+		double m1 = f.GetDerivativeMin(a, b, eps);
 		Console.WriteLine($"m1 = {m1}");
 
 		var iteration = 0;
 		double x = DivideSegment(a, b, f.F);
 		Console.WriteLine("Iter        a         b         c      f(a)      f(b)      f(c)");
 		// while (eps < b - a)
-		while (eps < Math.Abs(f.F(x)) / m1)
+		while (eps < Math.Abs(f.F(x)) / m1 && iteration <= MaxIterationsCount)
 		{
 			x = DivideSegment(a, b, f.F);
 			double fa = f.F(a);
@@ -70,24 +72,5 @@ public class SecantAlgorithm : IAlgorithm
 		}
 
 		return true;
-	}
-
-	// Так робити не зовсім правильно, оскільки ми проходимо весь інтервал і за цю ж "ціну" можемо просто знайти корінь рівння перебором
-	private static double GetDerivativeMin(double a, double b, double eps, Function f)
-	{
-		double x = a;
-		double min = Math.Abs(f.Derivative(x));
-		while (x <= b)
-		{
-			double derivative = Math.Abs(f.Derivative(x));
-			if (derivative < min)
-			{
-				min = derivative;
-			}
-
-			x += eps;
-		}
-
-		return min;
 	}
 }
