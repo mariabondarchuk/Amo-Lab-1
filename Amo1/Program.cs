@@ -1,10 +1,13 @@
-﻿namespace Amo1
+﻿using System.Text;
+
+namespace Amo1
 {
 	internal static class Program
 	{
 		private static void Main()
 		{
-			Console.WriteLine("Виберіть алгоритм:");
+            Console.OutputEncoding = Encoding.UTF8;
+            Console.WriteLine("Виберіть алгоритм:");
 			Console.WriteLine("1 - Метод хорд");
 			Console.WriteLine("2 - Спрощений метод Ньютона");
 			ConsoleKeyInfo input = Console.ReadKey();
