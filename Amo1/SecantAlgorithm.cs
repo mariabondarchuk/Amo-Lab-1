@@ -2,9 +2,9 @@
 
 public class SecantAlgorithm : IAlgorithm
 {
-	public int MaxIterationsCount { get; } = 100_000;
+	public int MaxIterationsCount => 100_000;
 
-	public double Run(double a, double b, double eps, Function f)
+    public double Run(double a, double b, double eps, Function f)
 	{
 		bool validation = EnsureCanUseSecantMethod(a, b, eps, f);
 		if (validation == false)

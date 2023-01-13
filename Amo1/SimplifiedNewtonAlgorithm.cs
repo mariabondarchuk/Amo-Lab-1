@@ -5,7 +5,7 @@ namespace Amo1;
 
 public class SimplifiedNewtonAlgorithm : IAlgorithm
 {
-	public int MaxIterationsCount => 100_0;
+	public int MaxIterationsCount => 1_000;
 
 	public double Run(double a, double b, double eps, Function f)
 	{
