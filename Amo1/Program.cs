@@ -15,30 +15,26 @@ namespace Amo1
 			if (input.Key == ConsoleKey.D1)
 			{
 				var algorithm = new SecantAlgorithm();
-				double secantSolution = algorithm.Run(0, 9, Math.Pow(10, -7), Functions.Func24);
-				Console.WriteLine($"Result = {secantSolution}");
+				double secantSolutionRoot1 = algorithm.Run(-2, -1.5, Math.Pow(10, -7), Functions.Func24);
+				double secantSolutionRoot2 = algorithm.Run(-1, -0.5, Math.Pow(10, -7), Functions.Func24);
+				double secantSolutionRoot3 = algorithm.Run(2, 3, Math.Pow(10, -7), Functions.Func24);
+				Console.WriteLine($"Корінь 1 = {secantSolutionRoot1}");
+				Console.WriteLine($"Корінь 2 = {secantSolutionRoot2}");
+				Console.WriteLine($"Корінь 3 = {secantSolutionRoot3}");
 
 			}
 			else if (input.Key == ConsoleKey.D2)
 			{
-				// todo: Замінити на функцію 16
 				var algorithm = new SimplifiedNewtonAlgorithm();
-				double simpleNewtonSolution = algorithm.Run(0, 9, Math.Pow(10, -7), Functions.Func24);
-				Console.WriteLine($"Result = {simpleNewtonSolution}");
+				double simpleNewtonSolution1 = algorithm.Run(-1.1, 0, Math.Pow(10, -7), Functions.Func16);
+				double simpleNewtonSolution2 = algorithm.Run(0, 1.2, Math.Pow(10, -7), Functions.Func16);
+				Console.WriteLine($"Корінь 1 = {simpleNewtonSolution1}");
+				Console.WriteLine($"Корінь 2 = {simpleNewtonSolution2}");
 			}
 			else
 			{
 				Console.WriteLine("Wrong input. Bye");
 			}
 		}
-
-		// // Спрощений метод Ньютона
-		// private static List<double> SimplifiedNewton(double a, double b, double eps, Func<double, double> func, Func<double, double> derivative)
-		// {
-		// 	double x = 3.14;
-		// 	double fOfX = Func16(x);
-		// 	double dOfFOfX = Func16Derivative(x);
-		// 	return null;
-		// }
 	}
 }
