@@ -27,9 +27,12 @@ public static class Functions
             double cos = Math.Cos(x);
             double sin = Math.Sin(x);
             double log = Math.Log2(Math.Sinh(x) + Math.Cosh(x));
+            double logIn2 = log * log;
+            double logIn3 = logIn2 * log;
             double ln2 = Math.Log(2);
             return 18 * xIn2 * log * log / ln2 +
                    6 * xIn3 * log / ln2 +
+                   6 * x * (logIn3 - 1) +
                    3 * cos * cos * cos -
                    6 * cos * sin * sin;
         }
